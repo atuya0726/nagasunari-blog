@@ -1,94 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>ながすなりのフルスタック入門</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on ながすなりのフルスタック入門</description>
+    <title>Essay on ながすなりのフルスタック入門</title>
+    <link>http://localhost:1313/tags/essay/</link>
+    <description>Recent content in Essay on ながすなりのフルスタック入門</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Apr 2026 18:20:08 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>なぜ個人ブログにHugoを採用したのか</title>
-      <link>http://localhost:1313/tech/hugo-blog/hugo-blog/</link>
-      <pubDate>Fri, 24 Apr 2026 18:20:08 +0900</pubDate>
-      <guid>http://localhost:1313/tech/hugo-blog/hugo-blog/</guid>
-      <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
-&lt;p&gt;ながすなりです。&lt;/p&gt;
-&lt;p&gt;とほほのWWW入門ってすごいですよね。もうかれこれ30年以上続けているらしいですよ。個人サイトとしては異例で破格の年数のような気がしています。
-もちろん継続していること自体もすごいのですが、これだけ有名なサイトになったということはもちろんPV数もすごいわけで、そうすると月に入ってくるお金もすごいんじゃないかと下世話ながら思うのです。
-そういうわけで個人ブログをやってみようと思い立ちました。深い話は他の記事に譲るとして、技術構成をどうしようかめちゃくちゃ悩んだわけでございます。そしてこのHugoというフレームワークを採用しました。その理由を語っていこうと思います。&lt;/p&gt;
-&lt;h1 id=&#34;hugoって何&#34;&gt;Hugoって何？&lt;/h1&gt;
-&lt;p&gt;兎にも角にもまずHugoって何？というところから話を始めようと思います。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;https://gohugo.io/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;公式ホームページには”Webサイトを構築するための世界で最も速いフレームワーク”とあります。また静的サイトジェネレーター（SSG）として、最も人気なオープンソースなフレームワークとも書かれています。&lt;/p&gt;
-&lt;p&gt;最も大きな特徴というか、Hugoの売りとしては爆速であることだそうです。実際に使ってみると確かにそのスピードは素晴らしい。まだ記事が少ないからかもしれませんが、ほとんどストレスを感じさせません。↓のサイトで4000ページまでのビルド時間を比較しているのですが、Hugoのスピードは圧倒的です。4000ページのビルドのスピードがHugoは&lt;code&gt;0.684s&lt;/code&gt;なのに対し、他のフレームワークは軒並み&lt;code&gt;1s&lt;/code&gt;を超えていますし、&lt;code&gt;10s&lt;/code&gt;を超えているものもざらです。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.zachleat.com/web/build-benchmark/&#34;&gt;https://www.zachleat.com/web/build-benchmark/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;このスピードはGoによる並列化や単一のバイナリによるものらしいです。この辺りもまた別で深掘りしてみたいですね。&lt;/p&gt;
-&lt;p&gt;またGo製ということもあって、依存関係を気にしなくてもいいというのは大きいですね。Node.js系のSSGだとどうしても依存関係のアプデが面倒ですよね。どれだけ自動化してもやっぱり面倒。Hugoではその手間はほとんどありません。Hugo自体のアプデと使っているテーマのアプデくらいですみます。&lt;code&gt;node_modules&lt;/code&gt;がなんか壊れた経験がなくていいのはでかいです。&lt;/p&gt;
-&lt;h1 id=&#34;なぜhugoを選んだのか&#34;&gt;なぜHugoを選んだのか&lt;/h1&gt;
-&lt;p&gt;なぜHugoを選んだのかを語る前に、このサイトに求める技術要件を明確にしましょう。私が求めていたのは2つでした。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;何十年使っても壊れない&lt;/li&gt;
-&lt;li&gt;運用・保守が楽&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;比較する時に、ざっくり次の4軸で見ていました。&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;フレームワーク&lt;/th&gt;
-          &lt;th&gt;速度&lt;/th&gt;
-          &lt;th&gt;学習コスト&lt;/th&gt;
-          &lt;th&gt;保守負荷&lt;/th&gt;
-          &lt;th&gt;拡張性&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Next.js&lt;/td&gt;
-          &lt;td&gt;△（SSGとしては十分速いが構成次第）&lt;/td&gt;
-          &lt;td&gt;△（React前提の知識が必要）&lt;/td&gt;
-          &lt;td&gt;△（Node依存や周辺ライブラリアプデが発生）&lt;/td&gt;
-          &lt;td&gt;◎（エコシステムが非常に広い）&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Astro&lt;/td&gt;
-          &lt;td&gt;○（静的生成は速め）&lt;/td&gt;
-          &lt;td&gt;○（比較的わかりやすい）&lt;/td&gt;
-          &lt;td&gt;△（Node依存はある）&lt;/td&gt;
-          &lt;td&gt;○（Island Architectureで拡張しやすい）&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Eleventy&lt;/td&gt;
-          &lt;td&gt;○（軽量で速い）&lt;/td&gt;
-          &lt;td&gt;○（シンプルだがテンプレート理解は必要）&lt;/td&gt;
-          &lt;td&gt;△（Node依存はある）&lt;/td&gt;
-          &lt;td&gt;○（柔軟に組める）&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Hugo&lt;/td&gt;
-          &lt;td&gt;◎（ビルドが非常に速い）&lt;/td&gt;
-          &lt;td&gt;○（Goテンプレートに慣れは必要）&lt;/td&gt;
-          &lt;td&gt;◎（単体バイナリ中心で管理が軽い）&lt;/td&gt;
-          &lt;td&gt;△（できることは多いが設計思想はやや固定）&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;何十年使っても壊れない&#34;&gt;何十年使っても壊れない&lt;/h2&gt;
-&lt;p&gt;とほほさんに憧れてやってみようと思ったので、スケールは何十年となるわけです。何十年となると壊れないかどうかって結構大事だと思うんです。
-そうなると記事自体をテキストで持っておきたいのです。HTMLやもしくはmdで持ちたい。そしてどちらかというと書きやすさという面で、mdで持ちたいと思いました。
-すると選択肢はNext.js, Astro, Eleventy, Hugoとなるわけです。ただNext.jsはReactのフレームワークで、mdを表示するために変換用ライブラリをインストールする必要があり、ちょっと手間なので除外しました。&lt;/p&gt;
-&lt;h2 id=&#34;運用保守が楽&#34;&gt;運用・保守が楽&lt;/h2&gt;
-&lt;p&gt;だいたい三つには絞れたんですが、どれを選ぶのかという話でした。さっきの条件と多少重なってしまうのですが、何十年も使うことを考えたら運用・保守のコストはバカにならないわけです。エンジニアらしくサボりたいんです。そう考えた時にただ一つだけそれに合致するフレームワークがあるんですね。それがHugoです。Go製なので、node_modulesから解放されるんです！本当にすぐアプデが来るので、依存関係の更新が面倒なんですよね。その面倒から解放されるのは非常に大きい。&lt;/p&gt;
-&lt;p&gt;またその速度も目を見張るものがあって、ビルドが速いのもストレスがなく快適です。速いのは正義です。十何年書き続けるとなったら、記事数も相当になることが見込まれるので、そう考えるとビルド速度が遅いとかなりストレスになることが予想されます。&lt;/p&gt;
-&lt;h1 id=&#34;逆にhugoの弱みって&#34;&gt;逆にHugoの弱みって？&lt;/h1&gt;
-&lt;p&gt;その拡張性の低さがやはりネックかと思います。特殊なデザインにしたいとか、アンケートフォームを埋め込みたいとか簡単な表示以上のことをしようとすると難しいようです。
-とほほのwww入門を目指す以上、シンプルな表示が望ましいと考えています。そのネックは今回のユースケースにはあまりデメリットにはならなそうですが、今後拡張したいと思った時にどうするかはまた今後考えることにしましょう。ピュアなmdにしようと思っているので、移行も容易でしょう。&lt;/p&gt;
-&lt;h1 id=&#34;終わりに&#34;&gt;終わりに&lt;/h1&gt;
-&lt;p&gt;今回は「何十年使うこと」を最優先にして、Hugoを選びました。速度、運用の軽さ、記事をmdで持てること。この3つが自分の中では大きかったです。&lt;/p&gt;
-&lt;p&gt;もちろん万能ではなく、拡張性の面では悩む場面も出てくると思います。ただ、まずは書き続けることが何より大事だと考えています。必要になった時に、その時点で拡張や移行を検討すればいいかなと。&lt;/p&gt;
-&lt;p&gt;まずは100記事を目標に、淡々と積み上げていきます。同じように「長く続けられるブログ基盤」を探している方の参考になればうれしいです。&lt;/p&gt;</description>
-    </item>
+    <lastBuildDate>Thu, 23 Apr 2026 21:32:23 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/essay/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>なぜQiitaもZennもnoteもある時代に個人ブログを始めたのか</title>
       <link>http://localhost:1313/other/why-start/why-start/</link>

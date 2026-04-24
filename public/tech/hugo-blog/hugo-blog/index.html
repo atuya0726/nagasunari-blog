@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>なぜ個人ブログにHugoを採用したのか | ながすなりのフルスタック入門</title>
+<meta name="keywords" content="Hßugo">
+<meta name="description" content="はじめに
+ながすなりです。
+とほほのWWW入門ってすごいですよね。もうかれこれ30年以上続けているらしいですよ。個人サイトとしては異例で破格の年数のような気がしています。
+もちろん継続していること自体もすごいのですが、これだけ有名なサイトになったということはもちろんPV数もすごいわけで、そうすると月に入ってくるお金もすごいんじゃないかと下世話ながら思うのです。
+そういうわけで個人ブログをやってみようと思い立ちました。深い話は他の記事に譲るとして、技術構成をどうしようかめちゃくちゃ悩んだわけでございます。そしてこのHugoというフレームワークを採用しました。その理由を語っていこうと思います。
+Hugoって何？
+兎にも角にもまずHugoって何？というところから話を始めようと思います。
+https://gohugo.io/
+公式ホームページには”Webサイトを構築するための世界で最も速いフレームワーク”とあります。また静的サイトジェネレーター（SSG）として、最も人気なオープンソースなフレームワークとも書かれています。
+最も大きな特徴というか、Hugoの売りとしては爆速であることだそうです。実際に使ってみると確かにそのスピードは素晴らしい。まだ記事が少ないからかもしれませんが、ほとんどストレスを感じさせません。↓のサイトで4000ページまでのビルド時間を比較しているのですが、Hugoのスピードは圧倒的です。4000ページのビルドのスピードがHugoは0.684sなのに対し、他のフレームワークは軒並み1sを超えていますし、10sを超えているものもざらです。
+https://www.zachleat.com/web/build-benchmark/
+このスピードはGoによる並列化や単一のバイナリによるものらしいです。この辺りもまた別で深掘りしてみたいですね。
+またGo製ということもあって、依存関係を気にしなくてもいいというのは大きいですね。Node.js系のSSGだとどうしても依存関係のアプデが面倒ですよね。どれだけ自動化してもやっぱり面倒。Hugoではその手間はほとんどありません。Hugo自体のアプデと使っているテーマのアプデくらいですみます。node_modulesがなんか壊れた経験がなくていいのはでかいです。
+なぜHugoを選んだのか
+なぜHugoを選んだのかを語る前に、このサイトに求める技術要件を明確にしましょう。私が求めていたのは2つでした。
+
+何十年使っても壊れない
+運用・保守が楽
+
+比較する時に、ざっくり次の4軸で見ていました。
+
+  
+      
+          フレームワーク
+          速度
+          学習コスト
+          保守負荷
+          拡張性
+      
+  
+  
+      
+          Next.js
+          △（SSGとしては十分速いが構成次第）
+          △（React前提の知識が必要）
+          △（Node依存や周辺ライブラリアプデが発生）
+          ◎（エコシステムが非常に広い）
+      
+      
+          Astro
+          ○（静的生成は速め）
+          ○（比較的わかりやすい）
+          △（Node依存はある）
+          ○（Island Architectureで拡張しやすい）
+      
+      
+          Eleventy
+          ○（軽量で速い）
+          ○（シンプルだがテンプレート理解は必要）
+          △（Node依存はある）
+          ○（柔軟に組める）
+      
+      
+          Hugo
+          ◎（ビルドが非常に速い）
+          ○（Goテンプレートに慣れは必要）
+          ◎（単体バイナリ中心で管理が軽い）
+          △（できることは多いが設計思想はやや固定）
+      
+  
+
+何十年使っても壊れない
+とほほさんに憧れてやってみようと思ったので、スケールは何十年となるわけです。何十年となると壊れないかどうかって結構大事だと思うんです。
+そうなると記事自体をテキストで持っておきたいのです。HTMLやもしくはmdで持ちたい。そしてどちらかというと書きやすさという面で、mdで持ちたいと思いました。
+すると選択肢はNext.js, Astro, Eleventy, Hugoとなるわけです。ただNext.jsはReactのフレームワークで、mdを表示するために変換用ライブラリをインストールする必要があり、ちょっと手間なので除外しました。
+運用・保守が楽
+だいたい三つには絞れたんですが、どれを選ぶのかという話でした。さっきの条件と多少重なってしまうのですが、何十年も使うことを考えたら運用・保守のコストはバカにならないわけです。エンジニアらしくサボりたいんです。そう考えた時にただ一つだけそれに合致するフレームワークがあるんですね。それがHugoです。Go製なので、node_modulesから解放されるんです！本当にすぐアプデが来るので、依存関係の更新が面倒なんですよね。その面倒から解放されるのは非常に大きい。
+またその速度も目を見張るものがあって、ビルドが速いのもストレスがなく快適です。速いのは正義です。十何年書き続けるとなったら、記事数も相当になることが見込まれるので、そう考えるとビルド速度が遅いとかなりストレスになることが予想されます。
+逆にHugoの弱みって？
+その拡張性の低さがやはりネックかと思います。特殊なデザインにしたいとか、アンケートフォームを埋め込みたいとか簡単な表示以上のことをしようとすると難しいようです。
+とほほのwww入門を目指す以上、シンプルな表示が望ましいと考えています。そのネックは今回のユースケースにはあまりデメリットにはならなそうですが、今後拡張したいと思った時にどうするかはまた今後考えることにしましょう。ピュアなmdにしようと思っているので、移行も容易でしょう。
+終わりに
+今回は「何十年使うこと」を最優先にして、Hugoを選びました。速度、運用の軽さ、記事をmdで持てること。この3つが自分の中では大きかったです。
+もちろん万能ではなく、拡張性の面では悩む場面も出てくると思います。ただ、まずは書き続けることが何より大事だと考えています。必要になった時に、その時点で拡張や移行を検討すればいいかなと。
+まずは100記事を目標に、淡々と積み上げていきます。同じように「長く続けられるブログ基盤」を探している方の参考になればうれしいです。">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/tech/hugo-blog/hugo-blog/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.47e51c7d8489b002361bac156ce9a0a8776d08c5462c2cee95801efafdd90d35.css" integrity="sha256-R&#43;UcfYSJsAI2G6wVbOmgqHdtCMVGLCzulYAe&#43;v3ZDTU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tech/hugo-blog/hugo-blog/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="ながすなりのフルスタック入門 (Alt + H)">ながすなりのフルスタック入門</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="http://localhost:1313/tech" title="技術">
+                    <span>技術</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/other" title="その他">
+                    <span>その他</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags" title="タグ">
+                    <span>タグ</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives" title="アーカイブ">
+                    <span>アーカイブ</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      なぜ個人ブログにHugoを採用したのか
+    </h1>
+    <div class="post-meta"><span title='2026-04-24 18:20:08 +0900 JST'>April 24, 2026</span>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><h1 id="はじめに">はじめに<a hidden class="anchor" aria-hidden="true" href="#はじめに">#</a></h1>
+<p>ながすなりです。</p>
+<p>とほほのWWW入門ってすごいですよね。もうかれこれ30年以上続けているらしいですよ。個人サイトとしては異例で破格の年数のような気がしています。
+もちろん継続していること自体もすごいのですが、これだけ有名なサイトになったということはもちろんPV数もすごいわけで、そうすると月に入ってくるお金もすごいんじゃないかと下世話ながら思うのです。
+そういうわけで個人ブログをやってみようと思い立ちました。深い話は他の記事に譲るとして、技術構成をどうしようかめちゃくちゃ悩んだわけでございます。そしてこのHugoというフレームワークを採用しました。その理由を語っていこうと思います。</p>
+<h1 id="hugoって何">Hugoって何？<a hidden class="anchor" aria-hidden="true" href="#hugoって何">#</a></h1>
+<p>兎にも角にもまずHugoって何？というところから話を始めようと思います。</p>
+<p><a href="https://gohugo.io/">https://gohugo.io/</a></p>
+<p>公式ホームページには”Webサイトを構築するための世界で最も速いフレームワーク”とあります。また静的サイトジェネレーター（SSG）として、最も人気なオープンソースなフレームワークとも書かれています。</p>
+<p>最も大きな特徴というか、Hugoの売りとしては爆速であることだそうです。実際に使ってみると確かにそのスピードは素晴らしい。まだ記事が少ないからかもしれませんが、ほとんどストレスを感じさせません。↓のサイトで4000ページまでのビルド時間を比較しているのですが、Hugoのスピードは圧倒的です。4000ページのビルドのスピードがHugoは<code>0.684s</code>なのに対し、他のフレームワークは軒並み<code>1s</code>を超えていますし、<code>10s</code>を超えているものもざらです。</p>
+<p><a href="https://www.zachleat.com/web/build-benchmark/">https://www.zachleat.com/web/build-benchmark/</a></p>
+<p>このスピードはGoによる並列化や単一のバイナリによるものらしいです。この辺りもまた別で深掘りしてみたいですね。</p>
+<p>またGo製ということもあって、依存関係を気にしなくてもいいというのは大きいですね。Node.js系のSSGだとどうしても依存関係のアプデが面倒ですよね。どれだけ自動化してもやっぱり面倒。Hugoではその手間はほとんどありません。Hugo自体のアプデと使っているテーマのアプデくらいですみます。<code>node_modules</code>がなんか壊れた経験がなくていいのはでかいです。</p>
+<h1 id="なぜhugoを選んだのか">なぜHugoを選んだのか<a hidden class="anchor" aria-hidden="true" href="#なぜhugoを選んだのか">#</a></h1>
+<p>なぜHugoを選んだのかを語る前に、このサイトに求める技術要件を明確にしましょう。私が求めていたのは2つでした。</p>
+<ul>
+<li>何十年使っても壊れない</li>
+<li>運用・保守が楽</li>
+</ul>
+<p>比較する時に、ざっくり次の4軸で見ていました。</p>
+<table>
+  <thead>
+      <tr>
+          <th>フレームワーク</th>
+          <th>速度</th>
+          <th>学習コスト</th>
+          <th>保守負荷</th>
+          <th>拡張性</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Next.js</td>
+          <td>△（SSGとしては十分速いが構成次第）</td>
+          <td>△（React前提の知識が必要）</td>
+          <td>△（Node依存や周辺ライブラリアプデが発生）</td>
+          <td>◎（エコシステムが非常に広い）</td>
+      </tr>
+      <tr>
+          <td>Astro</td>
+          <td>○（静的生成は速め）</td>
+          <td>○（比較的わかりやすい）</td>
+          <td>△（Node依存はある）</td>
+          <td>○（Island Architectureで拡張しやすい）</td>
+      </tr>
+      <tr>
+          <td>Eleventy</td>
+          <td>○（軽量で速い）</td>
+          <td>○（シンプルだがテンプレート理解は必要）</td>
+          <td>△（Node依存はある）</td>
+          <td>○（柔軟に組める）</td>
+      </tr>
+      <tr>
+          <td>Hugo</td>
+          <td>◎（ビルドが非常に速い）</td>
+          <td>○（Goテンプレートに慣れは必要）</td>
+          <td>◎（単体バイナリ中心で管理が軽い）</td>
+          <td>△（できることは多いが設計思想はやや固定）</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="何十年使っても壊れない">何十年使っても壊れない<a hidden class="anchor" aria-hidden="true" href="#何十年使っても壊れない">#</a></h2>
+<p>とほほさんに憧れてやってみようと思ったので、スケールは何十年となるわけです。何十年となると壊れないかどうかって結構大事だと思うんです。
+そうなると記事自体をテキストで持っておきたいのです。HTMLやもしくはmdで持ちたい。そしてどちらかというと書きやすさという面で、mdで持ちたいと思いました。
+すると選択肢はNext.js, Astro, Eleventy, Hugoとなるわけです。ただNext.jsはReactのフレームワークで、mdを表示するために変換用ライブラリをインストールする必要があり、ちょっと手間なので除外しました。</p>
+<h2 id="運用保守が楽">運用・保守が楽<a hidden class="anchor" aria-hidden="true" href="#運用保守が楽">#</a></h2>
+<p>だいたい三つには絞れたんですが、どれを選ぶのかという話でした。さっきの条件と多少重なってしまうのですが、何十年も使うことを考えたら運用・保守のコストはバカにならないわけです。エンジニアらしくサボりたいんです。そう考えた時にただ一つだけそれに合致するフレームワークがあるんですね。それがHugoです。Go製なので、node_modulesから解放されるんです！本当にすぐアプデが来るので、依存関係の更新が面倒なんですよね。その面倒から解放されるのは非常に大きい。</p>
+<p>またその速度も目を見張るものがあって、ビルドが速いのもストレスがなく快適です。速いのは正義です。十何年書き続けるとなったら、記事数も相当になることが見込まれるので、そう考えるとビルド速度が遅いとかなりストレスになることが予想されます。</p>
+<h1 id="逆にhugoの弱みって">逆にHugoの弱みって？<a hidden class="anchor" aria-hidden="true" href="#逆にhugoの弱みって">#</a></h1>
+<p>その拡張性の低さがやはりネックかと思います。特殊なデザインにしたいとか、アンケートフォームを埋め込みたいとか簡単な表示以上のことをしようとすると難しいようです。
+とほほのwww入門を目指す以上、シンプルな表示が望ましいと考えています。そのネックは今回のユースケースにはあまりデメリットにはならなそうですが、今後拡張したいと思った時にどうするかはまた今後考えることにしましょう。ピュアなmdにしようと思っているので、移行も容易でしょう。</p>
+<h1 id="終わりに">終わりに<a hidden class="anchor" aria-hidden="true" href="#終わりに">#</a></h1>
+<p>今回は「何十年使うこと」を最優先にして、Hugoを選びました。速度、運用の軽さ、記事をmdで持てること。この3つが自分の中では大きかったです。</p>
+<p>もちろん万能ではなく、拡張性の面では悩む場面も出てくると思います。ただ、まずは書き続けることが何より大事だと考えています。必要になった時に、その時点で拡張や移行を検討すればいいかなと。</p>
+<p>まずは100記事を目標に、淡々と積み上げていきます。同じように「長く続けられるブログ基盤」を探している方の参考になればうれしいです。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/h%C3%9Fugo/">Hßugo</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">ながすなりのフルスタック入門</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

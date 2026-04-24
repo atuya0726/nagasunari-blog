@@ -1,4 +1,28 @@
-baseURL = 'https://example.org/'
-locale = 'en-us'
-title = 'My New Hugo Project'
+baseURL = 'https://nagasunari.com/'
+locale = 'ja-jp'
+title = 'ながすなりのフルスタック入門'
 theme = "PaperMod"
+
+[params.homeInfoParams]
+    Title = "ながすなりのフルスタック入門"
+    Content = "とほほのWWW入門に影響を受けて、個人ブログを立ち上げました。ITエンジニア的なことを軸足に置きつつ、全く関係ない旅のこと本のこと私の人生のアウトプットしていこうと思っています。"
+
+[[menu.main]]
+    name = "技術"
+    url = "/tech"
+    weight = 1
+
+[[menu.main]]
+    name = "その他"
+    url = "/other"
+    weight = 10
+
+[[menu.main]]
+    name = "タグ"
+    url = "/tags"
+    weight = 100
+
+[[menu.main]]
+    name = "アーカイブ"
+    url = "/archives"
+    weight = 1000
