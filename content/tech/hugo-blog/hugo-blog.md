@@ -2,7 +2,7 @@
 date = '2026-04-24T18:20:08+09:00'
 draft = false
 title = 'なぜ個人ブログにHugoを採用したのか'
-tags = ["Hßugo"]
+tags = ["Hugo"]
 +++
 
 # はじめに
