@@ -2,27 +2,85 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Others on ながすなりのフルスタック入門</title>
-    <link>http://localhost:1313/other/</link>
+    <link>https://nagasunari.com/other/</link>
     <description>Recent content in Others on ながすなりのフルスタック入門</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
+    <language>ja-jp</language>
     <lastBuildDate>Thu, 23 Apr 2026 21:32:23 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/other/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nagasunari.com/other/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>なぜQiitaもZennもnoteもある時代に個人ブログを始めたのか</title>
-      <link>http://localhost:1313/other/why-start/why-start/</link>
+      <link>https://nagasunari.com/other/why-start/why-start/</link>
       <pubDate>Thu, 23 Apr 2026 21:32:23 +0900</pubDate>
-      <guid>http://localhost:1313/other/why-start/why-start/</guid>
+      <guid>https://nagasunari.com/other/why-start/why-start/</guid>
       <description>&lt;h1 id=&#34;はじめに&#34;&gt;はじめに&lt;/h1&gt;
 &lt;p&gt;ながすなりです。&lt;/p&gt;
-&lt;p&gt;個人ブログを始めてみました。このQiitaもZennもnoteもある時代にです。はてなダイアリーができたのが2003年&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;ß。&lt;/p&gt;
+&lt;p&gt;個人ブログを始めてみました。QiitaもZennもnoteもある時代に、です。&lt;/p&gt;
+&lt;p&gt;はてなダイアリーができたのが2003年&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;、Amebaブログが2004年&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。ざっくり20年前が、ブログ文化の全盛期だったのかなと思っています。もちろん、挙げたサービスも個人ブログではあるのですが、この記事では「独自ドメインで運用するサイト」を個人ブログと呼ぶことにします。&lt;/p&gt;
+&lt;p&gt;当時は、ブログサービスと一緒に個人ブログも盛り上がっていたはずです（本当のところは詳しくないですが）。ただ今は、SNSや大きなプラットフォームに発信の場が集まって、個人ブログの存在感はかなり薄くなった気がします。&lt;/p&gt;
+&lt;p&gt;この記事ではどうしてそんな世間の潮流に逆らって、個人ブログを始めたのかを語っていこうと思います。&lt;/p&gt;
+&lt;h1 id=&#34;とほほのwww入門に憧れたから&#34;&gt;とほほのWWW入門に憧れたから&lt;/h1&gt;
+&lt;p&gt;プログラミングにちょっとでも触れたことのある人ならば絶対に触ったことのあるサイトですよね。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.tohoho-web.com/www.htm&#34;&gt;https://www.tohoho-web.com/www.htm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;このサイトに憧れてしまったんです。このサイトはもう30年運用され続けていて、いまだに新しい項目が増えていくのです&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;。すごくないですか？
+その凄さを尊敬するとともに、自分の学んできたものが全て残るっていいなぁと思ったのです。普通学んだものは消えていきます。もちろん頭の中で残り続けるものもありますが、消えていくものがほとんどです。学生の頃に覚えた三角関数とか、中和滴定のウンタラカンタラとか覚えていないでしょう。でも当時のノートを振り返るとこんなことをやっていたんだなぁ&amp;hellip;となんか懐かしくなることがあったりするじゃないですか。そういうのっていいなって思ったんです。&lt;/p&gt;
+&lt;p&gt;自分が当時何を学んでいたのか、何を考えていたのか、自分の生きた証を少しずつ目に見える形で積み重ねていくことへの羨ましさを覚えたんです。そしてそれが多くの人間の役に立つということはきっと何にも変え難い喜びになり得るんじゃないかと思うのです。&lt;/p&gt;
+&lt;p&gt;その生き様にエンジニアとしてのアウトプットを感じて、かっこいいなと思ったんです。何か大きいことを成し遂げることもかっこいいけれど、少しずつ積み重ねたものが誰かの役に立つというのもすごくかっこいいと思うんです。めちゃくちゃ憧れてしまったんです。&lt;/p&gt;
+&lt;h1 id=&#34;アウトプットって大事だと思ったから&#34;&gt;アウトプットって大事だと思ったから&lt;/h1&gt;
+&lt;p&gt;これはすごく思うんです。今情報がたくさんあって、インプットだけ無駄にし続けている気がします。AIが進化したからなのかSNSが発達したからなのか、意味わからないくらいの情報が今自分の頭の中に叩き込まれているように感じます。ただ情報をインプットすることにももちろん価値はあるとは思うのですが、それをアウトプットすることにも同様に価値があると思うのです。&lt;/p&gt;
+&lt;p&gt;例えば映画を見たら友人に感想を話す。技術を学んだら実務で使ってみる。そういったアウトプットがきっと必要だと思うんです。インプットとアウトプットは表裏一体ですから。でもインプット偏重になってしまっている。こりゃいかんと思うわけです。だからこそその機会として記事におこすことを定期的にしてみようと思ったんです。以前一ヶ月毎日一本noteに投稿する企画を勝手に一人でやったことがあったのですが、あの時はネタを探すために日々を細かく見ていた気がします。&lt;/p&gt;
+&lt;p&gt;ネタを探すために日々を生きるとでもいうのでしょうか？今まで漠然と生きていた人生にネタ探しという一つの指針が生まれる。そうすることによって人生の解像度が上がって、今まで気がつかなかったことややろうともしなかったことをしようと思うようになったんです。これがアウトプットすることの効能かと思いました。アウトプットをすることで、また違う角度でインプットをする。そのループをずっと繰り返すことで深みのある人間になれるのかななんて思うわけです。&lt;/p&gt;
+&lt;p&gt;渋くて深みのある人間になりたいものです。&lt;/p&gt;
+&lt;h1 id=&#34;お金が欲しかった&#34;&gt;お金が欲しかった&lt;/h1&gt;
+&lt;p&gt;これも結構ありますね。多くのプラットフォームはお金を稼ぐ手段を用意してくれてはいますが、そう簡単なものはないように思います。noteだったら有料note。Zennだったら投げ銭や有料の本とかで稼ぐことはできます。そしてそれらは簡単ではないですし、変な手段になりがちです。noteだとお金に関連するnoteとか情報商材ちっくなものが並びます。それらが本質的であれば良いのですが&amp;hellip;これ以上はやめましょう。Zennも投げ銭や有料販売です。投げ銭は筋がいいように思います。この人は頑張っているから、お金を払いたい。すごく健全だと思うのですが、どうしてもそのハードルは高い。無料で読めるものにお金を払うハードルは予想以上に高いです。有料販売もよほど高名な人のものでないと買われないでしょう。そして高名な人は普通に本を出すでしょう。&lt;/p&gt;
+&lt;p&gt;そう考えるとやっぱり一番広告が筋がいいように思うのです。もちろんベッタベタに広告が貼られて、中身より広告のが多いじゃんとか。釣りタイトルでPV数だけ稼ぐとか。そういうちょっと最適化しすぎなサイトもありますけれど、読んだ人全員から等しくお金をもらう方法って多分広告しかないように思います。そして広告をつけるためには個人ブログしかない。&lt;/p&gt;
+&lt;p&gt;またとほほのWWW入門の試算をGeminiにしてもらいました。&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;項目&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;低めに見積もった場合&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;高めに見積もった場合&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;月間PV&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;300万 PV&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;600万 PV&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;推定RPM (1,000回表示あたりの収益)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;200円&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;400円&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;月間収益（推定）&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;約 60万円&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;約 240万円&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;年間収益（推定）&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;約 720万円&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;約 2,880万円&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;夢がありますなぁ&amp;hellip;まあもちろんこれはトップオブトップなので、夢見すぎですが。月一万円くらいを目標にやってみたいなと思うわけです。それだけでも大分嬉しいですし、月一万円もあればやれることが増えます。技術検証でAWSの代金とかも多少ながら払わねばならない時も来ると思うので、そういう時に当てられますしね。&lt;/p&gt;
 &lt;h1 id=&#34;おわりに&#34;&gt;おわりに&lt;/h1&gt;
+&lt;p&gt;憧れ、アウトプットの習慣化、そしてちょっとした収益化。理由を並べるとかなり俗っぽいですが、やってみようかなと思っています。少なくとも一年くらいは続けてみようかな。一年位積み上げてみて、予想より辛かったりしたらやめるつもりです。でも特に苦にもならず少しずつ読んでくれる人が増えて、収益も増えていったりなんかしたらいいですね。&lt;/p&gt;
 &lt;h1 id=&#34;参考文献&#34;&gt;参考文献&lt;/h1&gt;
 &lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;はてな（企業）- Wikipedia &lt;a href=&#34;https://ja.wikipedia.org/wiki/%E3%81%AF%E3%81%A6%E3%81%AA_(%E4%BC%81%E6%A5%AD)&#34;&gt;https://ja.wikipedia.org/wiki/%E3%81%AF%E3%81%A6%E3%81%AA_(%E4%BC%81%E6%A5%AD)&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%E3%81%AF%E3%81%A6%E3%81%AA_(%E4%BC%81%E6%A5%AD)&#34;&gt;https://ja.wikipedia.org/wiki/%E3%81%AF%E3%81%A6%E3%81%AA_(%E4%BC%81%E6%A5%AD)&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%A1%E3%83%BC%E3%83%90%E3%83%96%E3%83%AD%E3%82%B0&#34;&gt;https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%A1%E3%83%BC%E3%83%90%E3%83%96%E3%83%AD%E3%82%B0&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://type.jp/et/feature/30854/&#34;&gt;https://type.jp/et/feature/30854/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</description>
