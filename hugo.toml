@@ -3,6 +3,9 @@ locale = 'ja-jp'
 title = 'ながすなりのフルスタック入門'
 theme = "PaperMod"
 
+[params]
+    mainSections = ["tech", "other"]
+
 [params.homeInfoParams]
     Title = "ながすなりのフルスタック入門"
     Content = "とほほのWWW入門に影響を受けて、個人ブログを立ち上げました。ITエンジニア的なことを軸足に置きつつ、全く関係ない旅のこと本のこと私の人生のアウトプットしていこうと思っています。"
