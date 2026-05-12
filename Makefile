@@ -1,12 +1,20 @@
-.PHONY: help new-tech new-other
+.PHONY: help new-content new-tech new-other
 
 help:
 	@echo "使い方:"
+	@echo "  make new-content SECTION=your-section SLUG=your-post-slug  # 任意セクションの記事を作成"
 	@echo "  make new-tech SLUG=your-post-slug   # 技術記事を作成"
 	@echo "  make new-other SLUG=your-post-slug  # その他記事を作成"
 	@echo ""
 	@echo "例:"
 	@echo "  make new-tech SLUG=why-hugo"
+
+new-content:
+	@if [ -z "$(SLUG)" ]; then \
+		echo "SLUG を指定してください。例: make new-content SLUG=my-note"; \
+		exit 1; \
+	fi
+	hugo new "content/contents/$(SLUG)/$(SLUG).md"
 
 new-tech:
 	@if [ -z "$(SLUG)" ]; then \

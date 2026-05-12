@@ -2,7 +2,7 @@
 date = '2026-04-23T21:32:23+09:00'
 draft = false
 title = 'なぜQiitaもZennもnoteもある時代に個人ブログを始めたのか'
-tags = ["essay"]
+tags = ["雑記"]
 +++
 
 # はじめに
