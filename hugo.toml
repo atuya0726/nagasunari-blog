@@ -3,6 +3,10 @@ locale = 'ja-jp'
 title = 'ながすなりのフルスタック入門'
 theme = "PaperMod"
 
+[services]
+  [services.googleAnalytics]
+    id = "G-T2785XS0GV"
+
 [params]
     mainSections = ["tech", "contents", "other"]
 
